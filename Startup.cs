@@ -27,6 +27,7 @@ namespace shift_management
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -62,7 +63,8 @@ namespace shift_management
 
                 if (env.IsDevelopment())
                 {
-                    spa.UseAngularCliServer(npmScript: "start");
+                    // spa.UseAngularCliServer(npmScript: "start");
+                    spa.UseProxyToSpaDevelopmentServer("http://localhost:4200");
                 }
             });
         }
